@@ -18,3 +18,6 @@
 2) Install Worldborder click dependencies 
 
 ## Setting up Impact
+
+## Know Issues
+Enemy jump
