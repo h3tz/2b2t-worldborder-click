@@ -19,5 +19,5 @@
 
 ## Setting up Impact
 
-## Know Issues
+## Best practices / close before die situations
 Enemy jump
