@@ -20,4 +20,5 @@
 ## Setting up Impact
 
 ## Best practices / close before die situations
-Enemy jump
+Enemy jump in the way
+wither auto disconnect
