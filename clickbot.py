@@ -3,7 +3,6 @@
 This file is part of the 2B2T worldborder click. While using
 Minecraft Impact serving Bariton, it is just handling default Bariton
 commands to semiautomatically reach world border properly.
-
 Longer description of this module.
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -37,11 +36,11 @@ from pynput.keyboard import Key, Controller
 
 worldBorderRunV = "0.1"
 keyboardTypeSpeedDefault = 0.15 #sec
-scriptRuneTimeDefault_s = 21600 #21600sec = 6h
+scriptRuneTimeDefault_s = 43200 #21600sec = 12h
 baritonCommandWaitDefault = 0.5 #sec
 baritonWalkDefault = 600 #sec
 baritonMineDefault = 5 #sec
-baritonGoTo = "3000000 120 0"
+baritonGoTo = "30000000 120 0"
 baritonWaitBetweenCommands = 5 #sec
 baritonMineOre = "obsidian netherrack"
 startupWaitDefault = 10 #sec
@@ -81,7 +80,7 @@ for countdown in range(1, startupWaitDefault+1):
 def pressKey(key):
     """
     Press and release a keyboard key
-    :param key:
+    :param key: Key to press
     """
     keyboard.press(key)
     keyboard.release(key)
@@ -97,15 +96,15 @@ def _typeSimulation(stringToPrint):
     time.sleep(1)
     pressKey(Key.enter)
 
-def writeChatText(chatText):
+def writeChatText(text):
     """
     Type on keybord a given Text. Special characters and ALT, SHIFT, STRG combinations are not supported
-    :param chatText:
+    :param text: textToPrint
     """
     pressKey('t')
     pressKey('t')
     time.sleep(baritonCommandWaitDefault)
-    _typeSimulation(chatText)
+    _typeSimulation(text)
 
 def setBariton(command, executeTime):
     """
@@ -125,28 +124,16 @@ def goOnTrack():
     Main script to start walking till world border.
     Includes walking, minding, waiting (eating). Repeat
     """
-    direction = False
-    time.sleep(startupWaitDefault)
     while not stop.is_set():
-        setBariton(f'stop',baritonWaitBetweenCommands)
+        #setBariton(f'cancel',baritonWaitBetweenCommands)
         setBariton(f'goto {baritonGoTo}', baritonWalkDefault)
-        setBariton(f'stop',baritonWaitBetweenCommands)
+        #setBariton(f'cancel',baritonWaitBetweenCommands)
+        #especially for 2b2t we need tim mine sometimes to avoid being kicked
         setBariton(f'mine {baritonMineOre}', baritonMineDefault)
         time.sleep(3)
         #writeChatText(random.choice(motd))
-
 
 thread = Thread(target=goOnTrack)
 thread.start()
 thread.join(timeout=scriptRuneTimeDefault_s)
 stop.set()
-
- #time.sleep(randint(5,10))
-        ##keyboard.press(Key.esc)
-        #time.sleep(10)
-        #if direction == False:
-        #    pyautogui.moveRel(0, 15, duration=2)
-        #   direction = True
-        #else:
-        #   pyautogui.moveRel(0, -15, duration=2)
-#   direction = False
