@@ -6,7 +6,7 @@
 # Introduction
 
 2B2T Worldborder click is a simply python script which is running while you are connected on 2B2T. The script was created in front of my personal 2B2T world border journey and got in shape during the run of the first 10million blocks.
-> **Attention:** This script can be understood as semi automatic, since i did not find time to get into the Bariton API properly. 
+> **Attention:** This script can be understood as semi automatic, since i did not find time to get into the Bariton API properly. This means 
 
 
 ## Installation
