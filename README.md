@@ -7,7 +7,8 @@
 
 2B2T Worldborder click is a simply python script which is running while you are connected on 2B2T. The script was created in front of my personal 2B2T world border journey and got in shape during the run of the first 10million blocks.
 > **Attention:** This script can be understood as semi automatic, since i did not find time to get into the Bariton API properly.
-> **Attention:** Update 11.06.2021 currently iam working on my own bariton folk for a bot. Stay tuned.
+> **Attention:** Update 11.06.2021 currently iam working on my own bariton fork for a bot. Stay tuned.
+> **Attention:** Update 27.07.2021 currently iam working on my own bot based on meteor client.
 
 ## Installation
 
@@ -21,7 +22,7 @@
 Execute clickbot.py
 
 ## Setting up Impact
-The following impact settings are recommanded to enable: autoeat, autodisconnect, autosprint.
+The following impact settings are recommended to enable: autoeat, autodisconnect, sprint.
 
 
 ## Additional Tricks
